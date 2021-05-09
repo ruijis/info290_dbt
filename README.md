@@ -3,8 +3,7 @@ Welcome to your new dbt project!
 ### Using the starter project
 
 Try running the following commands:
-- important Instruction, change directory of dbt profiles to: export DBT_PROFILES_DIR=path/to/directory 
-or whereever you store the profiles.yml file
+- try command dbt debug --profiles-dir /home/jovyan/sp21/proj/proj5/info290_dbt to use the profiles from current directory
 - dbt run
 - dbt test
 
