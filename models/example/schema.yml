@@ -4,18 +4,43 @@ version: 2
 models:
     - name: my_first_dbt_model
       description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
 
     - name: my_second_dbt_model
       description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+    - name: my_third_dbt_model
+      description: "A starter dbt model"
+      
+    - name: my_fourth_dbt_model
+      description: "A starter dbt model"
+     
+    - name: my_fifth_dbt_model
+      description: "A starter dbt model"
+      
+    - name: my_sixth_dbt_model
+      description: "A starter dbt model"
+      
+    - name: my_seventh_dbt_model
+      description: "A starter dbt model"
+     
+    - name: my_eight_dbt_model
+      description: "A starter dbt model"
+      
+    - name: my_ninth_dbt_model
+      description: "A starter dbt model"
+      
+    - name: my_tenth_dbt_model
+      description: "A starter dbt model"
+      
+    
+sources:
+    - name: ucb_buildings # this is the source_name
+        database: ucb_buildings
+
+    tables:
+        - name: uc_locations # this is the table_name
+        - name: real_estate_metadata
+        - name: data
+        - name: metadata
+        - name: buildings_site_mapping
+        - name: ontology
+        - name: mapping
