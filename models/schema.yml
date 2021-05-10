@@ -31,14 +31,13 @@ models:
     - name: my_tenth_dbt_model
       description: "A starter dbt model"
       
-    
-sources:
-    - name: ucb_buildings # this is the source_name
-      tables:
-        - name: uc_locations # this is the table_name
-        - name: real_estate_metadata
-        - name: data
-        - name: metadata
-        - name: buildings_site_mapping
-        - name: ontology
-        - name: mapping
+#sources:
+#    - name: ucb_buildings
+#      tables:
+#        - name: uc_locations
+#        - name: real_estate_metadata
+#        - name: data
+#        - name: metadata
+#        - name: buildings_site_mapping
+#        - name: ontology
+#        - name: mapping
