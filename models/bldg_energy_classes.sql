@@ -10,10 +10,9 @@
 {{ config(materialized='table') }}
 
 
-SELECT metadata.*
-FROM metadata
-INNER JOIN {{ref('my_second_dbt_model')}} as bs ON bs.site=metadata.site
-
+SELECT bebc.rawname 
+FROM {{ref('bldg_energy_brick_classes')}} as bebc
+WHERE bebc.brickclass = 'https://brickschema.org/schema/Brick#Energy_Sensor'
 
 /*
     Uncomment the line below to remove records with null `id` values

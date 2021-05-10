@@ -2,34 +2,41 @@
 version: 2
 
 models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
+    - name: bldg
+      description: "Querying the bulding that has the largest amount of data."
+      
+    - name: bldg_site
+      description: "Querying the site of the building by inner joining it with buildings_site_mapping."
+      
+    - name: bldg_real_estate
+      description: "Querying the real estate metadata of the building by inner joining it with bldg_site."
+      
+    - name: bldg_metadata
+      description: "Querying the metadata of the building by by inner joining it with bldg_site."
+     
+    - name: bldg_energy_metadata
+      description: "Querying energy related metadata of the building by filtering units"
+      
+    - name: bldg_energy_raw_classes
+      description: "Querying energy related raw classes metadata by grouping by class"
+      
+    - name: bldg_energy_brick_classes
+      description: "Querying corresponding brick classes of the energy related raw classes"
+     
+    - name: bldg_energy_classes
+      description: "Filtering out the raw class that has the brickclass of Energy_Sensor"
+      
+    - name: bldg_energy_data
+      description: "Querying all energy related data that has the brickclass of Energy_Sensor"
+      
+    - name: bldg_energy_data_sum_class
+      description: "Getting the class that has the largest amount of energy data which represents the sum"
+      
+    - name: bldg_energy_consumption
+      description: "Querying the energy comsuption data of the day 2018-06-10l"
 
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-    - name: my_third_dbt_model
-      description: "A starter dbt model"
-      
-    - name: my_fourth_dbt_model
-      description: "A starter dbt model"
-     
-    - name: my_fifth_dbt_model
-      description: "A starter dbt model"
-      
-    - name: my_sixth_dbt_model
-      description: "A starter dbt model"
-      
-    - name: my_seventh_dbt_model
-      description: "A starter dbt model"
-     
-    - name: my_eight_dbt_model
-      description: "A starter dbt model"
-      
-    - name: my_ninth_dbt_model
-      description: "A starter dbt model"
-      
-    - name: my_tenth_dbt_model
-      description: "A starter dbt model"
+    - name: bldg_eui
+      description: "Calculating the Energy Usage Index (EUI) of the bulding at a particular day"
       
 #sources:
 #    - name: ucb_buildings

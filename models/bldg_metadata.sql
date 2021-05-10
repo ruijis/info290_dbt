@@ -10,9 +10,10 @@
 {{ config(materialized='table') }}
 
 
-SELECT rem.*
-FROM {{ref('my_second_dbt_model')}} as bs
-INNER JOIN real_estate_metadata rem ON bs.building = rem.building_name
+SELECT metadata.*
+FROM metadata
+INNER JOIN {{ref('bldg_site')}} as bs ON bs.site=metadata.site
+
 
 /*
     Uncomment the line below to remove records with null `id` values

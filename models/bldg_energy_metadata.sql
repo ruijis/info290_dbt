@@ -10,9 +10,10 @@
 {{ config(materialized='table') }}
 
 
-SELECT rem.*
-FROM {{ref('my_second_dbt_model')}} as bs
-INNER JOIN real_estate_metadata rem ON bs.building = rem.building_name
+SELECT bm.* 
+FROM {{ref('bldg_metadata')}} as bm
+WHERE bm.units in ('kwh', 'Kwh', 'kWh', 'kwH', 'KWh', 'KwH', 'kWH', 'KWH', 'kw', 'Kw', 'kW', 'KW')
+
 
 /*
     Uncomment the line below to remove records with null `id` values
