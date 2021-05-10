@@ -10,7 +10,7 @@
 {{ config(materialized='table') }}
 
 SELECT site, COUNT(value)
-FROM metadata, data
+FROM {{source('ucb_buildings','metadata')}}, {{source('ucb_buildings','data')}}
 WHERE metadata.id = data.id
 GROUP BY site
 ORDER BY COUNT DESC
