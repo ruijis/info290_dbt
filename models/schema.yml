@@ -34,9 +34,7 @@ models:
     
 sources:
     - name: ucb_buildings # this is the source_name
-        database: ucb_buildings
-
-    tables:
+      tables:
         - name: uc_locations # this is the table_name
         - name: real_estate_metadata
         - name: data

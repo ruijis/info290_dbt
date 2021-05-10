@@ -7,7 +7,7 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 SELECT site, COUNT(value)
 FROM {{source('ucb_buildings','metadata')}}, {{source('ucb_buildings','data')}}
