@@ -1,0 +1,16 @@
+proj5:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost #[hostname]
+      user: jovyan #[username]
+      password: default #[password]
+      port: 5432 #[port]
+      dbname: ucb_buildings
+      schema: default #[dbt schema]
+      threads: 1
+      keepalives_idle: 0 # default 0, indicating the system default
+      #search_path: [optional, override the default postgres search_path]
+      #role: [optional, set the role dbt assumes when executing queries]
+      #sslmode: [optional, set the sslmode used to connect to the database]

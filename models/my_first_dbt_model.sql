@@ -9,16 +9,12 @@
 
 {{ config(materialized='table') }}
 
-with source_data as (
-
-    select 1 as id
-    union all
-    select null as id
-
-)
-
-select *
-from source_data
+SELECT site, COUNT(value)
+FROM metadata, data
+WHERE metadata.id = data.id
+GROUP BY site
+ORDER BY COUNT DESC
+LIMIT 1
 
 /*
     Uncomment the line below to remove records with null `id` values
