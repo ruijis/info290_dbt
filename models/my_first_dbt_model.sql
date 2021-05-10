@@ -7,10 +7,10 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
 SELECT site, COUNT(value)
-FROM {{source('ucb_buildings','metadata')}}, {{source('ucb_buildings','data')}}
+FROM metadata, data
 WHERE metadata.id = data.id
 GROUP BY site
 ORDER BY COUNT DESC
