@@ -7,14 +7,13 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
-SELECT site, COUNT(value)
-FROM {{source('ucb_buildings','metadata')}}, {{source('ucb_buildings','data')}}
-WHERE metadata.id = data.id
-GROUP BY site
-ORDER BY COUNT DESC
-LIMIT 1
+
+SELECT metadata.*
+FROM metadata
+INNER JOIN {{ref('my_second_dbt_model')}} as bs ON bs.site=metadata.site
+
 
 /*
     Uncomment the line below to remove records with null `id` values
