@@ -1,12 +1,16 @@
-Welcome to your new dbt project!
+Welcome to your new dbt project!!
 
 ### Using the starter project
 
-Try running the following commands:
-- important Instruction, change directory of dbt profiles to: export DBT_PROFILES_DIR=path/to/directory 
-or whereever you store the profiles.yml file
-- dbt run
-- dbt test
+#### Make sure to update the directory when using dbt run
+#### i.e. --profiles-dir /home/jovyan/sp21/proj/proj5
+
+Commands to execute our project on Datahub after cloning github repo to test on datahub:
+rm -rf .ipynb_checkpoints/
+dbt run --profiles-dir /home/jovyan/sp21/proj/proj5
+dbt docs generate --profiles-dir /home/jovyan/sp21/proj/proj5
+dbt docs serve --profiles-dir /home/jovyan/sp21/proj/proj5
+
 
 
 ### Resources:
